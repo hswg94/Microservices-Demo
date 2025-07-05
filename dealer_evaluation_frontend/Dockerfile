@@ -17,5 +17,5 @@ EXPOSE 80
 # Set default port environment variable
 ENV PORT=80
 
-# Start the Flask app using the PORT env variable
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0", "-p", "$PORT"]
+# Start the Flask app using the PORT env variable (shell form for env expansion)
+CMD python3 -m flask run --host=0.0.0.0 -p $PORT
