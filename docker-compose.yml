@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./dealer_evaluation_frontend
+    ports:
+      - "5000:80"
+    depends_on:
+      - dealer_details
+      - products_list
+
+  dealer_details:
+    build:
+      context: ./dealer_evaluation_backend/dealer_details
+    ports:
+      - "5001:80"
+
+  products_list:
+    build:
+      context: ./dealer_evaluation_backend/products_list
+    ports:
+      - "5002:80"
